@@ -1,0 +1,34 @@
+<div style="width: 500px; margin: auto;">
+    <div *ngIf="currentUser" class="edit-form">
+      <h4>User</h4>
+      <h3 *ngIf="message"> {{message}}</h3>
+      <form>
+        <div class="form-group">
+          <label for="title">Name</label>
+          <input
+            type="text"
+            class="form-control"
+            id="name"
+            [(ngModel)]="currentUser.name"
+            name="name"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description">Position</label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            [(ngModel)]="currentUser.position"
+            name="description"
+          />
+        </div>
+  
+      </form>
+  
+      <button type="button" class="btn btn-danger" (click)="updateUser()" >Update</button>
+      <button type="button" class="btn btn-warning" (click)="deleteUser()">Delete</button>
+
+    </div>
+  
+  </div>

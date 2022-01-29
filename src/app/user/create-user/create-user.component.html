@@ -1,0 +1,22 @@
+<div style="width: 500px; margin: auto;">
+    <div class="submit-form">
+      <div *ngIf="!isUserAdded">
+        <div class="form-group">
+          <label for="title">Name</label>
+          <input type="text" class="form-control" id="title" required [(ngModel)]="user.name" name="name" />
+        </div>
+  
+        <div class="form-group">
+          <label for="description">Position</label>
+          <input class="form-control" id="description" required [(ngModel)]="user.position" name="description" />
+        </div>
+  
+        <button (click)="addUser()" class="btn btn-success">Create</button>
+      </div>
+  
+      <div *ngIf="isUserAdded">
+        <h3>New user added!</h3>
+        <button class="btn btn-success" (click)="newUser()"> + Add More</button>
+      </div>
+    </div>
+  </div>
